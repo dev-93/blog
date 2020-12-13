@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 require("dotenv").config();
 import Koa from "Koa";
 import Router from "koa-router";
