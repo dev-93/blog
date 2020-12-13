@@ -1,6 +1,5 @@
 import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
-import { function } from "@hapi/joi";
 
 const UserSchema = new Schema({
     username: String,
@@ -15,9 +14,14 @@ UserSchema.methods.setPassword = async function (password) {
 
 UserSchema.methods.checkPassword = async function (password) {
     const result = await bcrypt.compare(password, this.hashedPassword);
-    result;
+    return result;
 };
 
+UserSchema.methods.serialize = function () {
+    const data = this.toJSON();
+    delete data.hashedPassword;
+    return data;
+};
 // 스태틱 메서드
 
 UserSchema.statics.findByUsername = function (username) {
