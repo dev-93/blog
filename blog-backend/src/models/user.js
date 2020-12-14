@@ -35,7 +35,7 @@ UserSchema.methods.generateToken = function () {
             expiresIn: "7d",
         }
     );
-    return token;   
+    return token;
 };
 
 // 스태틱 메서드

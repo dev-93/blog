@@ -6,6 +6,7 @@ import bodyParser from "koa-bodyParser";
 import mongoose from "mongoose";
 
 import api from "./api";
+import jwtMiddleware from "./lib/jwtMiddleware";
 
 // process.env 내부 값에 대한 레퍼런스 생성
 const { PORT, MONGO_URI } = process.env;
@@ -27,6 +28,7 @@ router.use("/api", api.routes()); //라우터 적용
 
 // 라우터 적용 전, bodyParser 적용
 app.use(bodyParser());
+app.use(jwtMiddleware);
 
 // app instance에 라우터 적용
 app.use(router.routes()).use(router.allowedMethods());
