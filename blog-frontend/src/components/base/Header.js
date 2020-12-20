@@ -11,4 +11,4 @@ const Header = () => {
 
 const HeaderBlock = styled.div``;
 
-export default AuthForm;
+export default Header;
