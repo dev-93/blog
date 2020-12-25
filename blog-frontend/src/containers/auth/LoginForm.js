@@ -45,7 +45,7 @@ const LoginForm = ({history}) => {
             console.log("로그인 성공");
             dispatch(check());
         }
-    }, [auth, authError, dispatch()]);
+    }, [auth, authError, dispatch]);
 
     useEffect(() => {
         if(user) {
