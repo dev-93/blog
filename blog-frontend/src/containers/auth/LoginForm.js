@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector} from "react-redux";
 import { withRouter } from 'react-router-dom';
 import AuthForm from '../../components/auth/AuthForm';
-import { check } from '../../lib/api/auth';
+import { check } from "../../modules/user";
 import { changeField, initializeForm, login } from "../../modules/auth";
 
 const LoginForm = ({history}) => {
@@ -36,12 +36,12 @@ const LoginForm = ({history}) => {
     }, [dispatch]);
 
     useEffect(() => {
-        if(authError) {
+        if (authError) {
             console.log("오류 발생");
             console.log(authError);
             return;
         }
-        if(auth) {
+        if (auth) {
             console.log("로그인 성공");
             dispatch(check());
         }
@@ -50,8 +50,9 @@ const LoginForm = ({history}) => {
     useEffect(() => {
         if(user) {
             history.push('/')
-        }
+        };
     },[history, user]);
+
     return (
         <AuthForm
             type="login"
