@@ -7,8 +7,8 @@ import Button from '../common/Button';
 const textMap = {
     login: '로그인',
     register: '회원가입',
-}
-{/* 회원가입 or 로그인 폼 */}
+};
+
 const AuthForm = ({type, form, onChange, onSubmit, error}) => {
     const text = textMap[type];
 
@@ -21,7 +21,7 @@ const AuthForm = ({type, form, onChange, onSubmit, error}) => {
                     name="username"
                     placeholder="아이디"
                     onChange={onChange}
-                    value={form.username}
+                    // value={form.username}
                 />
                 <StyledInput 
                     autoComplete="new-password"
