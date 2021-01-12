@@ -9,7 +9,7 @@ const textMap = {
     register: '회원가입',
 };
 
-const AuthForm = ({type, form, onChange, onSubmit, error}) => {
+const AuthForm = ({type, form, onChange, onSubmit, error}) => { 
     const text = textMap[type];
 
     return (
@@ -21,7 +21,7 @@ const AuthForm = ({type, form, onChange, onSubmit, error}) => {
                     name="username"
                     placeholder="아이디"
                     onChange={onChange}
-                    // value={form.username}
+                    value={form.username}
                 />
                 <StyledInput 
                     autoComplete="new-password"
