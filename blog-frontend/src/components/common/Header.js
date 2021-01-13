@@ -1,20 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from "styled-components";
+import Button from './Button';
 import Responsive from './Responsive';
-
 
 const Header = () => {
     return (
         <>
             <HeaderBlock>
                 <Wrapper>
-                    <div className="logo">REACTERS</div>
+                    <Link to="/" className="logo">
+                    REACTERS
+                    </Link>
                     <div className="right">
-                        <button>로그인</button>
+                        <Button to="/login">로그인</Button>
                     </div>
                 </Wrapper>
             </HeaderBlock>
-
             <Spacer/>
         </>
     )

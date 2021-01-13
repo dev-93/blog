@@ -5,15 +5,15 @@ import { withRouter } from "react-router-dom";
 
 const Button = ({to, history, ...rest}) => {
     const onClick = e => {
-        if(to) {
+        if (to) {
             history.push(to);
         }
-        if(rest.onClick) {
+        if (rest.onClick) {
             rest.onClick(e)
         }
     };
 
-    return <StyledButton {...rest} onclick={onclick}   />;
+    return <StyledButton {...rest} onClick={onClick} />;
 
 };
 
@@ -53,4 +53,4 @@ const StyledButton = styled.button`
     }
 `;
 
-export default Button;
+export default withRouter(Button);
