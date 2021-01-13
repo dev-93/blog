@@ -4,7 +4,7 @@ import styled from "styled-components";
 import Button from './Button';
 import Responsive from './Responsive';
 
-const Header = () => {
+const Header = ({ user }) => {
     return (
         <>
             <HeaderBlock>
@@ -12,9 +12,16 @@ const Header = () => {
                     <Link to="/" className="logo">
                     REACTERS
                     </Link>
-                    <div className="right">
-                        <Button to="/login">로그인</Button>
-                    </div>
+                    {user ? (
+                        <div className="right">
+                            <UserInfo>{user.username}</UserInfo>
+                            <Button>로그아웃</Button>
+                        </div>
+                    ): (
+                        <div className="right">
+                            <Button to="/login">로그인</Button>
+                        </div>
+                    )}
                 </Wrapper>
             </HeaderBlock>
             <Spacer/>
@@ -47,6 +54,11 @@ const Wrapper = styled(Responsive)`
 
 const Spacer = styled.div`
     height: 4rem;
+`;
+
+const UserInfo = styled.div`
+    font-weight: 800;
+    margin-right: 1rem;
 `;
 
 export default Header;
