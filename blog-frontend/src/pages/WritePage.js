@@ -1,7 +1,11 @@
 import React from "react";
+import Responsive from "../components/common/Responsive";
+import Editor from "../components/write/Editor";
 
 const WrtiePage = () => {
-    return <div>쓰기</div>;
+    return <Responsive>
+        <Editor />
+    </Responsive>;
 };
 
 export default WrtiePage;
