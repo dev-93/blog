@@ -8,7 +8,7 @@ const TagBox = () => {
             <h4>태그</h4>
             <TagForm>
                 <input placeholder="태그를 입력하세요" />
-                <button type="추가">추가</button>
+                <button type="submit">추가</button>
             </TagForm>
             <TagList tags={['태그1','태그2','태그3']} />
         </TagBoxBlock>
@@ -44,8 +44,34 @@ const TagForm = styled.form`
     input {
         padding: 0.5rem;
         flex: 1;
-        min-wdith: 0;
+        min-width: 0;
     }
+    button {
+        cursor: pointer;
+        padding:0 1rem;
+        border:none;
+        background: ${palette.gray[8]};
+        color: white;
+        font-weight: bold;
+        &:hover {
+            background: ${palette.gray[6]};
+        }
+    }
+`;
+
+const Tag = styled.div`
+    margin-right: 0.5rem;
+    color: ${palette.gray[6]};
+    cursor: pointer;
+    &:hover {
+        opacity: .5;
+    }
+`;
+
+const TagListBlock = styled.div`
+    display: flex;
+    margin-top: 0.5rem;
+    
 `;
 
 export default TagBox;
