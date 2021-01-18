@@ -2,6 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import palette from '../../lib/styles/palette';
 
+const TagItem = React.memo(({tag})=> <Tag>#{tag}</Tag>);
+
+const TagList = React.memo(({tags})=> (
+    <TagListBlock>
+        {tags.map((tag) => (
+            <TagItem ket={tag} tag={tag} />
+        ))}
+    </TagListBlock>
+));
+
 const TagBox = () => {
     return (
         <TagBoxBlock>
