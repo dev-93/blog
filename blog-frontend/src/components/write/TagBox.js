@@ -52,11 +52,15 @@ const TagBox = () => {
     return (
         <TagBoxBlock>
             <h4>태그</h4>
-            <TagForm>
-                <input placeholder="태그를 입력하세요" />
+            <TagForm onSubmit={onSubmit}>
+                <input 
+                    placeholder="태그를 입력하세요"
+                    value={input}
+                    onChange={onChange}
+                />
                 <button type="submit">추가</button>
             </TagForm>
-            <TagList tags={['태그1','태그2','태그3']} />
+            <TagList tags={localTags} onRemove={onRemove} />
         </TagBoxBlock>
     );
 };
